@@ -1,19 +1,31 @@
-body {
+html, body {
 	font-family: 'Roboto', sans-serif; /* Polices Google, ne pas modifier. Apache License, version 2.0 */
 	font-family: 'Montserrat', sans-serif; /* Polices Google, ne pas modifier. SIL Open Font License, version 1.1 */
 	background-color: #D9CEB2;
 	color: white;
 	
 	margin: 0px; /* supprime le blanc autour des éléments */
+	padding: 0px; /* supprime le blanc autour des éléments */
+	height: 100%;
 }
+
+/* ÉLÉMENTS GÉNÉRAUX ET COMMUNS A PLUSIEURS PARTIES */
 
 li { /* Listes header et footer */
 	display: inline;
+	margin-right: 15px;
 }
 
 ul {
 	margin: 0px;
 }
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+/* HEADER - EN-TÊTE */
 
 header {
 	display: block;
@@ -25,7 +37,7 @@ header {
 }
 
 .nomLogo {
-	margin: 40px 400px 50px 200px;
+	margin: 40px 200px 50px 200px;
 	display: inline-block;	/* permet de mettre sur la même ligne le Logo/Nom et la navbar (à mettre sur les deux éléments à aligner, cf ligne 26) */
 }
 
@@ -33,13 +45,15 @@ header {
 	display: inline-block;
 }
 
+/* "BODY" - CONTENU PRINCIPAL */
+
 div.mainBox {
 	display: block;
 	position: static;
 	width: 60%;
-	height: auto;
+	height: 100%;
 	margin: auto;
-	padding: 10px 40px 10px 40px;	/* décolle le texte des bords de la div */
+	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
 	
 	background-color: white;
 	color: #212121;
@@ -50,11 +64,15 @@ div.mainBox h1 {
 	padding: 20px 0px 0px 20px;	/* décentre le titre pour le faire ressortir par rapport au contenu */
 }
 
+/* FOOTER - PIED DE PAGE */
+
 footer {
-	height: 8%;
+	height: 50px;
 	width: 100%;
 	display: block;
-	position: static;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	
 	background-color: #99B2B7;
 	text-align: center;
