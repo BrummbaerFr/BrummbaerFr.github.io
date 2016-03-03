@@ -35,7 +35,7 @@ function getCesarPlain(){
 	var tableau = hash.split("");
 	var plain = "";
 	for (var decale = 1; i < tableau.length; i++) {
-		plain += 'Décalage de 1: ';
+		plain += 'Décalage de '+decale+': ';
 		for (var i = 0; i < tableau.length; i++) {
 			//Si nous avons à faire à un espace nous ne le traitons pas
 			if (tableau[i] != ' '){
@@ -52,5 +52,5 @@ function getCesarPlain(){
 	}
 	//On a notre list de TEXT celon le décalage
 	//Set le resultat dans le Champ plain
-	document.getElementById("plain").innerHTML = hash;
+	document.getElementById("plain").innerHTML = plain;
 }
