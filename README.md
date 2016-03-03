@@ -5,8 +5,9 @@ See license.txt for more info.
 Website project that aims to cipher messages with different systems, using only HTML, CSS, and JavaScript.
 Planned :
 
-Cesar
-Vigenère
++ Cesar
++ Vigenère
 + our own eventually
++ we'll see
 
 Our sources are and will be commented in French.
