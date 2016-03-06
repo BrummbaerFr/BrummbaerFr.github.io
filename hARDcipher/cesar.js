@@ -3,7 +3,7 @@ function getCesarHash(){
 	document.getElementById("plain").innerHTML = document.getElementById("plain").value.toUpperCase();
 
 	//Get le Plain
-	var plain = document.getElementById("plain").value.toUpperCase();
+	var plain = document.getElementById("plain").value;
 	var decale_crypter = document.getElementById("decale_crypter").value;			//2 vars différentes sinon quand l'utilisateur décrypte le JS peut prendre la valeur qui a servi au cryptage
 	//Mettre chaque lettre dans un tableau
 	var tableau = plain.split("");
@@ -38,7 +38,7 @@ function getCesarPlain(){
 	var tableau = hash.split("");
 	var plain = "";
 	//var decale_decrypter = document.getElementById("decale_decrypter").value;
-	for (var decale_decrypter = 1; decale_decrypter < 26; i++) {
+	for (var decale_decrypter = 1; decale_decrypter < 26; decale_decrypter++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
 		for (var i = 0; i < tableau.length; i++) {
 			//Si nous avons à faire à un espace nous ne le traitons pas
