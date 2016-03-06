@@ -3,7 +3,7 @@ function getCesarHash(){
 	document.getElementById("plain").innerHTML = document.getElementById("plain").style.textTransform = "uppercase";
 
 	//Get le Plain
-	var plain = document.getElementById("plain").value;
+	var plain = document.getElementById("plain").value.toUpperCase();
 	var decale_crypter = document.getElementById("decale_crypter").value;			//2 vars différentes sinon quand l'utilisateur décrypte le JS peut prendre la valeur qui a servi au cryptage
 	//Mettre chaque lettre dans un tableau
 	var tableau = plain.split("");
@@ -33,7 +33,7 @@ function getCesarPlain(){
 	document.getElementById("hash").innerHTML = document.getElementById("hash").style.textTransform = "uppercase";
 
 	//Get le hash
-	var hash = document.getElementById("hash").value;
+	var hash = document.getElementById("hash").value.toUpperCase();
 	//Mettre chaque lettre dans un tableau
 	var tableau = hash.split("");
 	var plain = "";
