@@ -3,7 +3,7 @@ function getCesarHash(){
 	document.getElementById("plain").innerHTML = document.getElementById("plain").value.toUpperCase();
 
 	//Get le Plain
-	var plain = document.getElementById("plain").value;
+	var plain = document.getElementById("plain").value.toUpperCase();
 	var decale_crypter = document.getElementById("decale_crypter").value;			//2 vars différentes sinon quand l'utilisateur décrypte le JS peut prendre la valeur qui a servi au cryptage
 	//Mettre chaque lettre dans un tableau
 	var tableau = plain.split("");
@@ -14,7 +14,7 @@ function getCesarHash(){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
 			for (var ii = 0; ii < Number(decale_crypter); ii++) {
-				if(charCode == 90)CodeGood = 65;
+				if(charCode == 91)CodeGood = 65;
 				else charCode = Number(charCode) + 1;
 			}
 			//Remplacement du charCode par la nouvelle lettre
