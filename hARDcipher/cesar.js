@@ -15,7 +15,7 @@ function getCesarHash(){
 			var charCode = tableau[i].charCodeAt(0);
 			for (var ii = 0; ii < Number(decale_crypter); ii++) {
 				if(charCode == 90)CodeGood = 65;
-				else charCode = Number(charCode)++;
+				else charCode++;
 			}
 			//Remplacement du charCode par la nouvelle lettre
 			tableau[i] = String.fromCharCode(charCode);
