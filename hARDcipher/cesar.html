@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic,greek' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<title>hARD cipher - Accueil</title>
+    <script src="cesar.js"></script>
+	</head>
+	<body>
+		<div class="astable"> <!-- cf CSS pour commentaires -->
+			<header class="astablerow">
+				<h1 class="nomLogo">hARD cipher</h1>
+				<nav class="headerNav">
+					<ul>
+					<li><a href="index.html" class="active">Accueil</a></li>
+					<li><a href="cesar.html">César</a></li>
+					<li><a href="vigenere.html">Vigenère</a></li>
+					<li><a href="lien.html">Enigma</a></li>
+					<li><a href="hARD_code.html" class="dropdown">le hARD code</a>
+<!-- 						<ul class="dropdown_menu">
+voir CSS							<li><a href="hARD_code.html">Crypter</a></li>
+							<li><a href="hARD_code_decrypter.html">Décrypter</a></li>
+						</ul>
+						</li> -->
+					<li><a href="aproposdenous.html">qui sommes nous ?</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="mainBox" class="astablerow">
+				<h1>Le cryptosystème César</h1>
+          <textarea name="plain" placeholder="Votre texte à crypter ..."></textarea><br/>
+          <button name="crypter" onclick="getCesarHash()">Crypter</button><input name="decale" type="number"> décalage<br/>
+          <textarea name="hash" placeholder="Votre texte crypté ..."></textarea><br/>
+			</div>
+			<footer class="astablerow">
+				<nav class="footerNav">
+					<ul>
+						<li>A propos de nous</li>
+						<li>Licence</li>
+						<li>Mentions légales</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -9,7 +9,7 @@ function getCesarHash(){
 	var tableau = plain.split("");
 	var hash = "";
 	for (var i = 0; i < tableau.length; i++) {
-		//Si nous avons à faire à un espace nous ne le traitons pas
+		//Si nous avons affaire à un espace nous ne le traitons pas
 		if (tableau[i] != ' '){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
