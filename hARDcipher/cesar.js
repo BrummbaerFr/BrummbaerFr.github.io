@@ -38,7 +38,7 @@ function getCesarPlain(){
 	var tableau = hash.split("");
 	var plain = "";
 	//var decale_decrypter = document.getElementById("decale_decrypter").value;
-	for (var decale_decrypter = 1; i < tableau.length; i++) {
+	for (var decale_decrypter = 1; decale_decrypter < 26; i++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
 		for (var i = 0; i < tableau.length; i++) {
 			//Si nous avons à faire à un espace nous ne le traitons pas
