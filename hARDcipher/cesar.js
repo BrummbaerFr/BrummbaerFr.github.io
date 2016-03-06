@@ -17,6 +17,7 @@ function getCesarHash(){
 				if(charCode == 91)charCode = 65;
 				else charCode = Number(charCode) + 1;
 			}
+			document.getElementById("hash").innerHTML = charCode;
 			//Remplacement du charCode par la nouvelle lettre
 			tableau[i] = String.fromCharCode(charCode);
 		}
@@ -25,7 +26,7 @@ function getCesarHash(){
 	}
 	//On a notre HASH
 	//Set le Hash dans le Champ Hash
-	document.getElementById("hash").innerHTML = hash;
+	//document.getElementById("hash").innerHTML = hash;
 }
 
 function getCesarPlain(){
