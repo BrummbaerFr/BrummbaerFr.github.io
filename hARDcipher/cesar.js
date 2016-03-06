@@ -14,10 +14,9 @@ function getCesarHash(){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
 			for (var ii = 0; ii < Number(decale_crypter); ii++) {
-				if(charCode == 91)charCode = 65;
+				if(charCode == 90)charCode = 65;
 				else charCode = Number(charCode) + 1;
 			}
-			document.getElementById("hash").innerHTML = charCode;
 			//Remplacement du charCode par la nouvelle lettre
 			tableau[i] = String.fromCharCode(charCode);
 		}
@@ -26,7 +25,7 @@ function getCesarHash(){
 	}
 	//On a notre HASH
 	//Set le Hash dans le Champ Hash
-	//document.getElementById("hash").innerHTML = hash;
+	document.getElementById("hash").innerHTML = hash;
 }
 
 function getCesarPlain(){
