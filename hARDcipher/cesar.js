@@ -13,9 +13,12 @@ function getCesarHash(){
 		if (tableau[i] != ' '){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
-			var charCodeGood = Number(charCode) + Number(decale_crypter);
+			for (var ii = 0; ii < Number(decale_crypter); ii++) {
+				if(charCode == 90)CodeGood = 65;
+				else charCode = Number(charCode)++;
+			}
 			//Remplacement du charCode par la nouvelle lettre
-			tableau[i] = String.fromCharCode(charCodeGood);
+			tableau[i] = String.fromCharCode(charCode);
 		}
 		//Assemblement du tableau
 		hash += tableau[i];
