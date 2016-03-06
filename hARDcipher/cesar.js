@@ -32,12 +32,12 @@ function getCesarPlain(){
 	//UPPERCASE l'input dans le hash
 	document.getElementById("hash").innerHTML = document.getElementById("hash").value.toUpperCase();
 
-	//Get le Plain
+	//Get le hash
 	var hash = document.getElementById("hash").value;
 	//Mettre chaque lettre dans un tableau
 	var tableau = hash.split("");
 	var plain = "";
-	var decale_decrypter = document.getElementById("decale_decrypter").value;
+	//var decale_decrypter = document.getElementById("decale_decrypter").value;
 	for (var decale_decrypter = 1; i < tableau.length; i++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
 		for (var i = 0; i < tableau.length; i++) {
