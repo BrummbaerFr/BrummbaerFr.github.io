@@ -1,6 +1,6 @@
 function getCesarHash(){
 	//UPPERCASE l'input dans le Plain
-	document.getElementById("plain").innerHTML = document.getElementById("plain").style.textTransform = "uppercase";
+	document.getElementById("plain").style.textTransform = "uppercase";
 
 	//Get le Plain
 	var plain = document.getElementById("plain").value.toUpperCase();
@@ -30,7 +30,7 @@ function getCesarHash(){
 
 function getCesarPlain(){
 	//UPPERCASE l'input dans le hash
-	document.getElementById("hash").innerHTML = document.getElementById("hash").style.textTransform = "uppercase";
+	document.getElementById("hash").style.textTransform = "uppercase";
 
 	//Get le hash
 	var hash = document.getElementById("hash").value.toUpperCase();
