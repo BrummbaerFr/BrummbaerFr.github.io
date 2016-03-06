@@ -14,7 +14,7 @@ function getCesarHash(){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
 			for (var ii = 0; ii < Number(decale_crypter); ii++) {
-				if(charCode == 91)CodeGood = 65;
+				if(charCode == 91)charCode = 65;
 				else charCode = Number(charCode) + 1;
 			}
 			//Remplacement du charCode par la nouvelle lettre
