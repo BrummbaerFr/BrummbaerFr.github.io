@@ -23,7 +23,7 @@ html, body {
 }
 
 textarea{
-	width: 40%;
+	width: 100%;
 	height: 30%;
 }
 
@@ -40,7 +40,6 @@ input {
 /* HEADER - EN-TÊTE */
 
 header {
-	display: block;
 	height: 15%;
 	width: 100%;
 	position: static;
@@ -116,11 +115,11 @@ header {
 
 div#mainBox {
 	display: block;
-	position: static;
 	width: 60%;
 	height: 100%;
 	margin: auto;
 	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
+	overflow:  hidden;
 
 	background-color: white;
 	color: #212121;
@@ -132,12 +131,22 @@ div#mainBox h1 {
 	padding: 20px 0px 0px 20px;	/* décentre le titre pour le faire ressortir par rapport au contenu */
 }
 
+aside {
+	float: right;
+	width: 40%;
+}
+
+.systeme {
+	float: left;
+	width: 55%;
+	height: 500px;
+}
+
 /* FOOTER - PIED DE PAGE */
 
 footer {
 	height: 50px;
 	width: 100%;
-	display: block;
 	position: static;	/* permet au footer de ne pas flotter au dessus du contenu principal */
 
 	background-color: #99B2B7;
