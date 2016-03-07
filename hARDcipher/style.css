@@ -106,6 +106,7 @@ div#mainBox {
 	height: 100%;
 	margin: auto;
 	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
+	overflow: hidden;
 	
 	background-color: white;
 	color: #212121;
