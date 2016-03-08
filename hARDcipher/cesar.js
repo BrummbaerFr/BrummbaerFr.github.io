@@ -41,19 +41,17 @@ function getCesarPlain(){
 	for (var decale_decrypter = 1; decale_decrypter < 26; decale_decrypter++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
 		for (var i = 0; i < tableau.length; i++) {
+			var charCode = tableau[i].charCodeAt(0);
 			//Si nous avons à faire à un espace nous ne le traitons pas
 			if (tableau[i] != ' '){
-				var charCode = tableau[i].charCodeAt(0);
 				for (var ii = 0; ii < Number(decale_decrypter); ii++) {
 					//Parcourir le tableau en convertissant chaque lettre en ASCII et y retirer le décalage
 					if(charCode == 65)charCode = 90;
 					else charCode = Number(charCode) - 1;
 				}
-				//Remplacement du charCode par la nouvelle lettre
-				tableau[i] = String.fromCharCode(charCode);
 			}
-			//Assemblement du tableau
-			plain += tableau[i];
+			//Assemblement du tableau et Remplacement du charCode par la nouvelle lettre
+			plain += String.fromCharCode(charCode);
 		}
 		plain += "\n";
 	}
