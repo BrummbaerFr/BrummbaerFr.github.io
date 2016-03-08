@@ -52,7 +52,7 @@ function getCesarPlain(){
 			//Assemblement du tableau
 			plain += tableau[i];
 		}
-		plain += "<br />";
+		plain += "\n";
 	}
 	//On a notre list de TEXT celon le décalage
 	//Set le resultat dans le Champ plain
