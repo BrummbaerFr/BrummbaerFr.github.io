@@ -136,6 +136,10 @@ aside {
 	width: 40%;
 }
 
+aside img {
+	width: 100%;
+}
+
 .systeme {
 	float: left;
 	width: 55%;
