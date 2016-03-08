@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic,greek' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<title>hARD cipher - César</title>
+    <script type="text/javascript" src="cesar.js"></script>
+	</head>
+	<body>
+		<div class="astable"> <!-- cf CSS pour commentaires -->
+			<header class="astablerow">
+				<h1 class="nomLogo">hARD cipher</h1>
+				<nav class="headerNav">
+					<ul>
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="cesar.html" class="active">César</a></li>
+					<li><a href="vigenere.html">Vigenère</a></li>
+					<li><a href="lien.html">Enigma</a></li>
+					<li><a href="hARD_code.html" class="dropdown">le hARD code</a>
+<!-- 						<ul class="dropdown_menu">
+voir CSS							<li><a href="hARD_code.html">Crypter</a></li>
+							<li><a href="hARD_code_decrypter.html">Décrypter</a></li>
+						</ul>
+						</li> -->
+					<li><a href="aproposdenous.html">qui sommes nous ?</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="mainBox" class="astablerow">
+				<div class="systeme">
+					<h1>Le cryptosystème César</h1>
+          <textarea name="plain" id="plain" placeholder="Votre texte à crypter ..."></textarea><br/>
+          <button name="crypter" onclick="getCesarHash()">Crypter</button><input name="decale" id="decale_crypter" type="number"> décalage<br/>
+          <textarea name="hash" id="hash" placeholder="Votre texte crypté ..."></textarea><br/>
+					<button name="decrypter" onclick="getCesarPlain()">Décrypter</button><br/>
+				</div>
+				<aside>
+					<p>
+						Le chiffrement par décalage, ou code de César, était une méthode de cryptage utilisée par Jules César pendant ses correspondances secrètes.
+					</p>
+					<p>
+						Le principe consiste à décaler les lettres de l'alphabet d'un certain nombre de rangs, vers la gauche ou vers la droite. C'est une méthode de chiffrement circulaire : si je crypte la lettre Z, en décalant vers la droite deux fois, je retourne au début de l'alphabet et j'obtiens donc la lettre B.
+					</p>
+					<img src="../media/Caesar_cipher_500.png" alt="Illustration du code fonctionnement du code César"/>
+					<p>
+						La cryptanalyse de ce système est simple : on peut par exemple analyser les fréquences d'apparition des lettres dans le texte crypter, puis relier ceci avec les lettres les plus utilisées dans la langue étudiée. Autrement, on peut juste tenter de décoder le texte en essayant plusieurs valeurs de décodage, jusqu'à trouver du texte clair et intelligible.
+					</p>
+				</aside>
+			</div>
+			<footer class="astablerow">
+				<nav class="footerNav">
+					<ul>
+						<li>A propos de nous</li>
+						<li>Licence</li>
+						<li>Mentions légales</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+	</body>
+</html>
