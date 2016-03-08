@@ -82,27 +82,25 @@ header {
 	background: #D9CEB2;
 }
 
-/* .dropdown {				Dropdown menu, à réparer
-	position: relative;
-}
-
-.dropdown_menu {
+.headerNav ul ul {
 	display: none;
 	position: absolute;
-	min-width: 60px;
-
-	background-color: #D5DED9;
-	box-shadow: 1px 1px 8px rgba(0,0,0,.32);
 }
 
-.dropdown_menu a {
-	padding: 12px 16px;
+.headerNav li:hover ul.niveau1 { /*menu déroulant by Aymeric*/
 	display: block;
 }
 
-.dropdown:hover .dropdown_menu {
+.headerNav ul.niveau1 li {
 	display: block;
-} */
+	text-align: left;
+	color: #7A6A53;
+	padding: 0;
+}
+
+.headerNav ul.niveau1 a {
+	text-align: left;
+}
 
 .nomLogo {
 	margin: auto;
