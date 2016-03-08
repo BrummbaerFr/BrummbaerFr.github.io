@@ -78,5 +78,5 @@ function getCesarPlain(){
 }
 
 function hasKey(){
-	document.getElementById("choix").innerHTML = '<input name="decale" id="decale_decrypter" type="number"> décalage<br/>';
+	document.getElementById("choix").innerHTML = '<input name="decale" id="decale_decrypter" type="number"> décalage';
 }
