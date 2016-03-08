@@ -82,12 +82,13 @@ header {
 	background: #D9CEB2;
 }
 
-.headerNav ul ul {
+.headerNav ul ul {		/*menu déroulant by Aymeric*/
 	display: none;
 	position: absolute;
+	box-shadow: 1px 1px 8px rgba(0,0,0,.32);
 }
 
-.headerNav li:hover ul.niveau1 { /*menu déroulant by Aymeric*/
+.headerNav li:hover ul.niveau1 {
 	display: block;
 }
 
