@@ -3,7 +3,7 @@ html, body {
 	font-family: 'Montserrat', sans-serif; /* Polices Google, ne pas modifier. SIL Open Font License, version 1.1 */
 	background-color: #D9CEB2;
 	color: white;
-	
+
 	margin: 0px; /* supprime le blanc autour des éléments */
 	padding: 0px; /* supprime le blanc autour des éléments */
 	height: 100%;
@@ -22,14 +22,28 @@ html, body {
     display: table-row;		/* Affiche la div/le footer/le header comme une "ligne" du tableau (se comporte comme <tr>) */
 }
 
+textarea{
+	width: 100%;
+	height: 30%;
+}
+
+button{
+	background: #948C75;
+	margin: 5px 0px 5px 0px;
+	border: 2px solid #948C75;
+}
+
+input {
+	margin-left: 10px;
+}
+
 /* HEADER - EN-TÊTE */
 
 header {
-	display: block;
 	height: 15%;
 	width: 100%;
 	position: static;
-	
+
 	background-color: #99B2B7;
 }
 
@@ -42,7 +56,7 @@ header {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	
+
 	text-align: center;			/* centre la nav sur l'espace horizontal */
 }
 
@@ -68,27 +82,25 @@ header {
 	background: #D9CEB2;
 }
 
-/* .dropdown {				Dropdown menu, à réparer
-	position: relative;
-}
-
-.dropdown_menu {
+.headerNav ul ul {
 	display: none;
 	position: absolute;
-	min-width: 60px;
-	
-	background-color: #D5DED9;
-	box-shadow: 1px 1px 8px rgba(0,0,0,.32);
 }
 
-.dropdown_menu a {
-	padding: 12px 16px;
+.headerNav li:hover ul.niveau1 { /*menu déroulant by Aymeric*/
 	display: block;
 }
 
-.dropdown:hover .dropdown_menu {
+.headerNav ul.niveau1 li {
 	display: block;
-} */
+	text-align: left;
+	color: #7A6A53;
+	padding: 0;
+}
+
+.headerNav ul.niveau1 a {
+	text-align: left;
+}
 
 .nomLogo {
 	margin: auto;
@@ -101,13 +113,12 @@ header {
 
 div#mainBox {
 	display: block;
-	position: static;
 	width: 60%;
 	height: 100%;
 	margin: auto;
 	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
 	overflow: hidden;
-	
+
 	background-color: white;
 	color: #212121;
 	box-shadow: 1px 1px 8px rgba(0,0,0,.32);
@@ -118,14 +129,28 @@ div#mainBox h1 {
 	padding: 20px 0px 0px 20px;	/* décentre le titre pour le faire ressortir par rapport au contenu */
 }
 
+aside {
+	float: right;
+	width: 40%;
+}
+
+aside img {
+	width: 100%;
+}
+
+.systeme {
+	float: left;
+	width: 55%;
+	height: 500px;
+}
+
 /* FOOTER - PIED DE PAGE */
 
 footer {
 	height: 50px;
 	width: 100%;
-	display: block;
 	position: static;	/* permet au footer de ne pas flotter au dessus du contenu principal */
-	
+
 	background-color: #99B2B7;
 	text-align: center;
 }
