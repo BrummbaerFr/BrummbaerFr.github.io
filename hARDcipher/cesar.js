@@ -37,7 +37,6 @@ function getCesarPlain(){
 	//Mettre chaque lettre dans un tableau
 	var tableau = hash.split("");
 	var plain = "";
-	//var decale_decrypter = document.getElementById("decale_decrypter").value;
 	for (var decale_decrypter = 1; decale_decrypter < 26; decale_decrypter++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
 		for (var i = 0; i < tableau.length; i++) {
