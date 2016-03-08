@@ -43,11 +43,14 @@ function getCesarPlain(){
 		for (var i = 0; i < tableau.length; i++) {
 			//Si nous avons à faire à un espace nous ne le traitons pas
 			if (tableau[i] != ' '){
-				//Parcourir le tableau en convertissant chaque lettre en ASCII et y retirer le décalage
 				var charCode = tableau[i].charCodeAt(0);
-				var charCodeGood = Number(charCode) - Number(decale_decrypter);
+				for (var ii = 0; ii < Number(decale_decrypter); ii++) {
+					//Parcourir le tableau en convertissant chaque lettre en ASCII et y retirer le décalage
+					if(charCode == 90)charCode = 65;
+					else charCode = Number(charCode) - 1;
+				}
 				//Remplacement du charCode par la nouvelle lettre
-				tableau[i] = String.fromCharCode(charCodeGood);
+				tableau[i] = String.fromCharCode(charCode);
 			}
 			//Assemblement du tableau
 			plain += tableau[i];
