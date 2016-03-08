@@ -46,7 +46,7 @@ function getCesarPlain(){
 				var charCode = tableau[i].charCodeAt(0);
 				for (var ii = 0; ii < Number(decale_decrypter); ii++) {
 					//Parcourir le tableau en convertissant chaque lettre en ASCII et y retirer le décalage
-					if(charCode == 90)charCode = 65;
+					if(charCode == 65)charCode = 90;
 					else charCode = Number(charCode) - 1;
 				}
 				//Remplacement du charCode par la nouvelle lettre
