@@ -1,24 +1,46 @@
 function syracuseCipher() {
   var plain = document.getElementById('plain').value.toUpperCase();    // on récupère le texte et on le transforme en majuscules
-  plain = plain.replace(/\s+/g, '');    // \s RegEx pour "Espace" et /g pour TOUS. Supprime tous les espaces de plain
+  plain = plain.replace(/\W+/g, '');    // RegExp : \W pour les caractères spéciaux et /g pour TOUS. Supprime les caractères spéciaux, pareil pour lignes 4 & 5
+  plain = plain.replace(/\s+/g, '');    // \s RegExp pour "Espace"
+  plain = plain.replace(/\d+/g, ''); // pareil que ligne 3 mais enlève les nombres (\d)
   alert(plain);
   var key = "";   // var clé
   for (var i = 0; i < plain.length; i++) {   // boucle de cryptage
+    var iterations = Math.floor((Math.random() * 40) +10); // Génère le nombre d'itérations (entre 10 et 40)
+    document.getElementById('key').value += iterations;
+    document.getElementById('key').value += "|";
     var ciphered = (plain.charCodeAt(i))-65;    // on prend le numéro ASCII de la lettre
-    while (ciphered != 1) {   // tant que l'on ne tombe pas dans le cycle 1, 4, 2 ... on applique la suite
+    for (var k = 0; k < iterations; k++) {  // on fait tourner la suite pour k itérations
       if (ciphered%2 != 0) {    // si le nombre est impair, on fait les opérations nécessaires
         ciphered *= 3;
         ciphered += 1;
-        key += 0;   // trace (clé) 0 = impair
       }
       else {    // sinon, le nombre est forcément pair, on divise par deux
         ciphered /= 2;
-        key += 1;   // trace (clé) 1 = pair
       }
     }
-    var display = "B";
-    document.getElementById('cipher').value += display;
-    key += 5;
+    document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
   }
-  document.getElementById('key').value = key;
+}
+
+function syracuseDecipher () {
+  var plain = "";
+  var cipher = document.getElementById('cipher').value.toUpperCase();    // on récupère le texte crypté
+  cipher = cipher.replace(/\W+/g, '');    // il ne devrait pas y avoir de caractères spéciaux, mais si l'user en entre un ...
+  cipher = cipher.replace(/\s+/g, '');    // pareil pour les espaces
+  cipher = cipher.replace(/\d+/g, '');    // pareil pour les chiffres
+  var key = document.getElementById('key').value;   // on récupère la clé
+  var keyArray = key.split("");
+  alert(keyArray);
+  var keyArrayLength = keyArray.length
+  for (var p = 0; p < keyArrayLength; p++) {
+    var check = isNaN(keyArray[p]);   // isNaN retourne si l'élément est un nombre ou pas
+    if (check = true) {   // s'il n'en est pas un, on le retire
+      keyArray.splice(p,1);
+    }
   }
+  alert(keyArray);
+  for (var i = 0; i < cipher.length; i++) {
+
+  }
+}
