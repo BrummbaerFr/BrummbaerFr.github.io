@@ -42,6 +42,7 @@ function syracuseDecipher () {
         ciphered /= 3;
       }
     }
-  document.getElementById('plain').value += String.fromCharCode(ciphered+65);
+    ciphered %= 26;
+    document.getElementById('plain').value += String.fromCharCode(ciphered+65);
   }
 }
