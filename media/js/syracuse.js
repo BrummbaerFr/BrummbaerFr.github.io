@@ -17,6 +17,7 @@ function syracuseCipher() {
       else {    // sinon, le nombre est forcément pair, on divise par deux
         ciphered /= 2;
       }
+      key += 5;
     }
     document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
   }
