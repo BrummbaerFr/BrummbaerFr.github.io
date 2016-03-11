@@ -38,11 +38,11 @@ function syracuseDecipher () {
     var ciphered = (cipher.charCodeAt(i))-64;
     var bin = Number(keyArray[i]).toString(2);
     bin = bin.split("");
+    bin.reverse();
     console.log();
     debugger;
     for (var p = 0; p < bin.length; p++) {
-      var check = bin[p];
-      if (check%2 == 0) {
+      if (bin[p] == 0) {
         ciphered *= 2;
         console.log();
         debugger;
