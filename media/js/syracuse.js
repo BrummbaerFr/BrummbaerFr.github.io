@@ -3,22 +3,25 @@ function syracuseCipher() {
   plain = plain.replace(/\W+/g, '');    // RegExp : \W pour les caractères spéciaux et /g pour TOUS. Supprime les caractères spéciaux, pareil pour lignes 4 & 5
   plain = plain.replace(/\s+/g, '');    // \s RegExp pour "Espace"
   plain = plain.replace(/\d+/g, ''); // pareil que ligne 3 mais enlève les nombres (\d)
-  var key = "";   // var clé
+  var keyNumber = "";   // var clé pour le nombre
   for (var i = 0; i < plain.length; i++) {   // boucle de cryptage
-    var iterations = Math.floor((Math.random() * 40) +10); // Génère le nombre d'itérations (entre 10 et 40)
-    document.getElementById('key').value += iterations;
-    document.getElementById('key').value += "|";
-    var ciphered = (plain.charCodeAt(i))-65;    // on prend le numéro ASCII de la lettre
+    var iterations = Math.floor((Math.random() * 8) + 1); // Génère le nombre d'itérations (entre 1 et 8 pour coder sur un octet)
+    var ciphered = (plain.charCodeAt(i))-65;
+    keyNumber = "";   // réinitialisation de la clé
     for (var k = 0; k < iterations; k++) {  // on fait tourner la suite pour k itérations
       if (ciphered%2 != 0) {    // si le nombre est impair, on fait les opérations nécessaires
         ciphered *= 3;
         ciphered += 1;
+        keyNumber += "1";
       }
       else {    // sinon, le nombre est forcément pair, on divise par deux
         ciphered /= 2;
+        keyNumber += "0";
       }
-      key += 5;
     }
+    var dec = parseInt(keyNumber, 2);   // convertit la clé binaire associée au chiffre traité en base 2 pour prendre moins de place
+    document.getElementById('key').value += dec + "|";
+    ciphered %= 26;
     document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
   }
 }
