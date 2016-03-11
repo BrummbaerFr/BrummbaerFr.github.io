@@ -3,7 +3,6 @@ function syracuseCipher() {
   plain = plain.replace(/\W+/g, '');    // RegExp : \W pour les caractères spéciaux et /g pour TOUS. Supprime les caractères spéciaux, pareil pour lignes 4 & 5
   plain = plain.replace(/\s+/g, '');    // \s RegExp pour "Espace"
   plain = plain.replace(/\d+/g, ''); // pareil que ligne 3 mais enlève les nombres (\d)
-  alert(plain);
   var key = "";   // var clé
   for (var i = 0; i < plain.length; i++) {   // boucle de cryptage
     var iterations = Math.floor((Math.random() * 40) +10); // Génère le nombre d'itérations (entre 10 et 40)
@@ -30,17 +29,19 @@ function syracuseDecipher () {
   cipher = cipher.replace(/\s+/g, '');    // pareil pour les espaces
   cipher = cipher.replace(/\d+/g, '');    // pareil pour les chiffres
   var key = document.getElementById('key').value;   // on récupère la clé
-  var keyArray = key.split("");
-  alert(keyArray);
-  var keyArrayLength = keyArray.length
-  for (var p = 0; p < keyArrayLength; p++) {
-    var check = isNaN(keyArray[p]);   // isNaN retourne si l'élément est un nombre ou pas
-    if (check = true) {   // s'il n'en est pas un, on le retire
-      keyArray.splice(p,1);
-    }
-  }
+  var keyArray = key.split('|');    // supprimes les | de la clé
   alert(keyArray);
   for (var i = 0; i < cipher.length; i++) {
-
+    var ciphered = (cipher.charCodeAt(i))-65;
+    for (var p = 0; p < keyArray[i]; p++) {
+      if (ciphered%2 != 0) {    // si le nombre est impair, on multiplie par 2 (on exécute la suite à l'envers)
+        ciphered *= 2;
+      }
+      else {
+        ciphered -= 1;
+        ciphered /= 3;
+      }
+    }
+  document.getElementById('plain').value += String.fromCharCode(ciphered+65);
   }
 }
