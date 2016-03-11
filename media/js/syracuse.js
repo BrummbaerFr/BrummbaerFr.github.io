@@ -6,7 +6,7 @@ function syracuseCipher() {
   var keyNumber = "";   // var clé pour le nombre
   for (var i = 0; i < plain.length; i++) {   // boucle de cryptage
     var iterations = Math.floor((Math.random() * 8) + 1); // Génère le nombre d'itérations (entre 1 et 8 pour coder sur un octet)
-    var ciphered = (plain.charCodeAt(i))-65;
+    var ciphered = (plain.charCodeAt(i))-64;
     keyNumber = "";   // réinitialisation de la clé
     for (var k = 0; k < iterations; k++) {  // on fait tourner la suite pour k itérations
       if (ciphered%2 != 0) {    // si le nombre est impair, on fait les opérations nécessaires
@@ -22,7 +22,7 @@ function syracuseCipher() {
     var dec = parseInt(keyNumber, 2);   // convertit la clé binaire associée au chiffre traité en base 2 pour prendre moins de place
     document.getElementById('key').value += dec + "|";
     ciphered %= 26;
-    document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
+    document.getElementById('cipher').value += String.fromCharCode(ciphered+64);
   }
 }
 
@@ -34,19 +34,27 @@ function syracuseDecipher () {
   cipher = cipher.replace(/\d+/g, '');    // pareil pour les chiffres
   var key = document.getElementById('key').value;   // on récupère la clé
   var keyArray = key.split('|');    // supprimes les | de la clé
-  alert(keyArray);
   for (var i = 0; i < cipher.length; i++) {
-    var ciphered = (cipher.charCodeAt(i))-65;
-    for (var p = 0; p < keyArray[i]; p++) {
-      if (ciphered%2 != 0) {    // si le nombre est impair, on multiplie par 2 (on exécute la suite à l'envers)
+    var ciphered = (cipher.charCodeAt(i))-64;
+    var bin = Number(keyArray[i]).toString(2);
+    bin = bin.split("");
+    console.log();
+    debugger;
+    for (var p = 0; p < bin.length; p++) {
+      var check = bin[p];
+      if (check%2 == 0) {
         ciphered *= 2;
+        console.log();
+        debugger;
       }
       else {
         ciphered -= 1;
         ciphered /= 3;
+        console.log();
+        debugger;
       }
     }
     ciphered %= 26;
-    document.getElementById('plain').value += String.fromCharCode(ciphered+65);
+    document.getElementById('plain').value += String.fromCharCode(ciphered+64);
   }
 }
