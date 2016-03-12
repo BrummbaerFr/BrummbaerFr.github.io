@@ -29,14 +29,13 @@ function syracuseCipher() {
 		  if (ciphered > 26) {
 			iterations++;
 		  }
-
     }
-	keyNumber += "1";		// CONVERSION EN DEC = PERTE D INFORMATIONS
     var dec = parseInt(keyNumber, 2);   // convertit la clé binaire associée au chiffre traité en base 2 pour prendre moins de place
+    keyNumber += "1";		// CONVERSION EN DEC = PERTE D INFORMATIONS
     document.getElementById('key').value += dec + "|";
     document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
-	console.log();
-	debugger;
+	  console.log();
+	  debugger;
   }
 }
 
