@@ -4,25 +4,39 @@ function syracuseCipher() {
   plain = plain.replace(/\s+/g, '');    // \s RegExp pour "Espace"
   plain = plain.replace(/\d+/g, ''); // pareil que ligne 3 mais enlève les nombres (\d)
   var keyNumber = "";   // var clé pour le nombre
+  console.log();
+  debugger;
   for (var i = 0; i < plain.length; i++) {   // boucle de cryptage
-    var iterations = Math.floor((Math.random() * 8) + 1); // Génère le nombre d'itérations (entre 1 et 8 pour coder sur un octet)
-    var ciphered = (plain.charCodeAt(i))-64;
+    var iterations = Math.floor((Math.random() * 8) + 2); // Génère le nombre d'itérations (entre 2 et 8 pour coder sur un octet)
+    var ciphered = (plain.charCodeAt(i))-65;
     keyNumber = "";   // réinitialisation de la clé
+	console.log();
+	debugger;
     for (var k = 0; k < iterations; k++) {  // on fait tourner la suite pour k itérations
-      if (ciphered%2 != 0) {    // si le nombre est impair, on fait les opérations nécessaires
-        ciphered *= 3;
-        ciphered += 1;
-        keyNumber += "1";
-      }
-      else {    // sinon, le nombre est forcément pair, on divise par deux
-        ciphered /= 2;
-        keyNumber += "0";
-      }
+		  if (ciphered%2 != 0) {    // si le nombre est impair, on fait les opérations nécessaires
+			ciphered *= 3;
+			ciphered += 1;
+			keyNumber += "1";
+			console.log();
+			debugger;
+		  }
+		  else {    // sinon, le nombre est forcément pair, on divise par deux
+			ciphered /= 2;
+			keyNumber += "0";
+			console.log();
+			debugger;
+		  }
+		  if (ciphered > 26) {
+			iterations++;
+		  }
+
     }
+	keyNumber += "1";		// CONVERSION EN DEC = PERTE D INFORMATIONS
     var dec = parseInt(keyNumber, 2);   // convertit la clé binaire associée au chiffre traité en base 2 pour prendre moins de place
     document.getElementById('key').value += dec + "|";
-    ciphered %= 26;
-    document.getElementById('cipher').value += String.fromCharCode(ciphered+64);
+    document.getElementById('cipher').value += String.fromCharCode(ciphered+65);
+	console.log();
+	debugger;
   }
 }
 
@@ -34,27 +48,30 @@ function syracuseDecipher () {
   cipher = cipher.replace(/\d+/g, '');    // pareil pour les chiffres
   var key = document.getElementById('key').value;   // on récupère la clé
   var keyArray = key.split('|');    // supprimes les | de la clé
+  console.log();
+  debugger;
   for (var i = 0; i < cipher.length; i++) {
-    var ciphered = (cipher.charCodeAt(i))-64;
+    var ciphered = (cipher.charCodeAt(i))-65;
     var bin = Number(keyArray[i]).toString(2);
     bin = bin.split("");
     bin.reverse();
-    console.log();
-    debugger;
-    for (var p = 0; p < bin.length; p++) {
+	console.log();
+	debugger;
+    for (var p = 0; p < (bin.length-1); p++) {
       if (bin[p] == 0) {
         ciphered *= 2;
-        console.log();
-        debugger;
+		console.log();
+		debugger;
       }
       else {
         ciphered -= 1;
         ciphered /= 3;
-        console.log();
-        debugger;
+		console.log();
+		debugger;
       }
     }
-    ciphered %= 26;
-    document.getElementById('plain').value += String.fromCharCode(ciphered+64);
+	console.log();
+	debugger;
+    document.getElementById('plain').value += String.fromCharCode(ciphered+65);
   }
 }
