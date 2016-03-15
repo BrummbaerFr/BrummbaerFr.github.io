@@ -6,7 +6,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic,greek' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
 		<link rel="icon" type="image/png" href="../media/img/favicon.ico">
-		<title>hARD cipher - Accueil</title>
+		<title>hARD cipher - Fréquence des lettres</title>
+    <script type="text/javascript" src="../media/js/cryptanalyse.js"></script>
 	</head>
 	<body>
 		<div class="astable"> <!-- cf CSS pour commentaires -->
@@ -14,16 +15,16 @@
 				<h1 class="nomLogo">hARD cipher</h1>
 				<nav class="headerNav">
 					<ul>
-					<li><a href="index.html" >Accueil</a></li>
-					<li><a href="cesar.html">César</a></li>
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="cesar.html" >César</a></li>
 					<li><a href="vigenere.html">Vigenère</a></li>
-					<li><a href="cryptanalyse.html">Cryptanalyse</a>
+          <li><a href="cryptanalyse.html" class="active">Cryptanalyse</a>
 						<ul class="niveau1">
 							<li><a href="freqlettres.html">Fréquence des lettres</a></li>
 							<li><a href="decoder.html">décoder</a></li>
 						</ul>
 					</li>
-					<li><a href="hARD_code.html">le hARD code</a>
+					<li><a href="hARD_code.html" class="dropdown">le hARD code</a>
 						<ul class="niveau1">
 							<li><a href="coder.html">coder</a></li>
 							<li><a href="decoder.html">décoder</a></li>
@@ -34,17 +35,24 @@
 				</nav>
 			</header>
 			<div id="mainBox" class="astablerow">
-				<h1>Bienvenue !</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac elit vel augue faucibus placerat at sed dolor. Suspendisse potenti. Sed vitae tempor leo. Integer nec maximus orci. Fusce at enim nec turpis ultrices venenatis. Etiam fringilla erat sed maximus laoreet. Cras massa lacus, varius at posuere nec, vestibulum nec augue. Nunc commodo ante sit amet risus ullamcorper sagittis. Nullam pharetra eros eu dignissim congue. Etiam aliquet felis ornare nunc cursus pellentesque.
-				</p>
+				<div class="systeme">
+					<h1>Analyse de la fréquence des lettres</h1>
+          <textarea name="ciphered" id="ciphered" placeholder="Texte à analyser ..."></textarea><br/>
+          <button name="analyse" onclick="freqLettres()">Faire l'analyse</button><br/>
+          <p id="result"></p><br/>
+				</div>
+				<aside>
+					<p>
+						Cette page vous permet d'analyser la fréquence d'apparition des lettres d'un texte crypté. Entrez votre texte dans la zone ci-contre, appuyez sur <strong>Analyser</strong>, et les résultats apparaîtront.
+					</p>
+				</aside>
 			</div>
 			<footer class="astablerow">
 				<nav class="footerNav">
 					<ul>
 						<li><a href="about.html">A propos de nous</a></li>
 						<li><a href="license.html">Licence</a></li>
-            <li><a href="livredor.html">Livre d'or</a></li>
+						<li><a href="livredor.html">Livre d'or</a></li>
 					</ul>
 				</nav>
 			</footer>
