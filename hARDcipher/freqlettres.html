@@ -39,13 +39,18 @@
 					<h1>Analyse de la fréquence des lettres</h1>
           <textarea name="ciphered" id="ciphered" placeholder="Texte à analyser ..."></textarea><br/>
           <button name="analyse" onclick="freqLettres()">Analyser</button><br/>
-          <p id="result"></p><br/>
 				</div>
 				<aside>
 					<p>
 						Cette page vous permet d'analyser la fréquence d'apparition des lettres d'un texte crypté. Entrez votre texte dans la zone ci-contre, appuyez sur <strong>Analyser</strong>, et les résultats apparaîtront.
 					</p>
 				</aside>
+				<table id="result">
+					<tr>
+						<th>Lettre</th>
+						<th>Fréquence</th>
+					</tr>
+				</table>
 			</div>
 			<footer class="astablerow">
 				<nav class="footerNav">
