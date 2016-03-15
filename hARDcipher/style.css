@@ -37,6 +37,19 @@ input {
 	margin-left: 10px;
 }
 
+#result {
+	margin-top: 500px;
+	width: 80%;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+#result th, td {
+	text-align: center;
+	padding: 2px;
+	border: 2px solid #99B2B7;
+}
+
 a {
 	color: #948C75;
 	text-decoration: none;
@@ -133,7 +146,7 @@ div#mainBox {
 	height: 100%;
 	margin: auto;
 	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
-	overflow: hidden;
+	overflow: auto;
 
 	background-color: white;
 	color: #212121;
