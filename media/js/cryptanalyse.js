@@ -33,7 +33,7 @@ function freqLettres() {
   console.log();
   debugger;
   for (var counter = 0; counter < cipheredArray.length; counter++) {
-    var letter = cipheredArray.charCodeAt(counter);
+    var letter = ciphered.charCodeAt(counter);
     switch (letter) {
       case 65:
         a++;
@@ -143,4 +143,30 @@ function freqLettres() {
   var zPer = (z*cipheredArray.length)/100;
   // Affichage des résultats
   document.getElementById('result').innerHTML += "<em>Résultats</em><br/>Analyse de " + ciphered.length + " lettres dans " + wordCount + " mots.";
+  document.getElementById('result').innerHTML += "A : " + a + " (" + aPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "B : " + b + " (" + bPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "C : " + c + " (" + cPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "D : " + d + " (" + dPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "E : " + e + " (" + ePer + "%)<br/>";
+  document.getElementById('result').innerHTML += "F : " + f + " (" + fPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "G : " + g + " (" + gPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "H : " + h + " (" + hPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "I : " + i + " (" + iPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "J : " + j + " (" + jPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "K : " + k + " (" + kPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "L : " + l + " (" + lPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "M : " + m + " (" + mPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "N : " + n + " (" + nPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "O : " + o + " (" + oPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "P : " + p + " (" + pPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "Q : " + q + " (" + qPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "R : " + r + " (" + rPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "S : " + s + " (" + sPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "T : " + t + " (" + tPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "U : " + u + " (" + uPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "V : " + v + " (" + vPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "W : " + w + " (" + wPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "X : " + x + " (" + xPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "Y : " + y + " (" + yPer + "%)<br/>";
+  document.getElementById('result').innerHTML += "Z : " + z + " (" + zPer + "%)<br/>";
 }
