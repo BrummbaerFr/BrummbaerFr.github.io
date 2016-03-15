@@ -142,7 +142,7 @@ function freqLettres() {
   var yPer = (y*cipheredArray.length)/100;
   var zPer = (z*cipheredArray.length)/100;
   // Affichage des résultats
-  document.getElementById('result').innerHTML += "<em>Résultats</em><br/>Analyse de " + ciphered.length + " lettres dans " + wordCount + " mots.";
+  document.getElementById('result').innerHTML += "<em>Résultats</em><br/>Analyse de " + ciphered.length + " lettres dans " + wordCount + " mots.<br/>";
   document.getElementById('result').innerHTML += "A : " + a + " (" + aPer + "%)<br/>";
   document.getElementById('result').innerHTML += "B : " + b + " (" + bPer + "%)<br/>";
   document.getElementById('result').innerHTML += "C : " + c + " (" + cPer + "%)<br/>";
