@@ -3,10 +3,6 @@ function freqLettres() {
   var wordCount = ciphered.split(" ").length;
   ciphered = ciphered.replace(/\W+/g, '');
   ciphered = ciphered.replace(/\s+/g, '');
-  if (ciphered = "") {
-    alert("Vous n'avez rien entré.");
-    var counter = 26;
-  }
   var cipheredArray = ciphered.split(""); // string to array pour pouvoir les ranger par ordre alph. cf ligne ci-dessous
   cipheredArray.sort();
   ciphered = cipheredArray.toString();  // forme traitable de la string pour compter ses caractères
