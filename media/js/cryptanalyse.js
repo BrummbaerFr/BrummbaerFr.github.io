@@ -6,7 +6,7 @@ function freqLettres() {
   var cipheredArray = ciphered.split(""); // string to array pour pouvoir les ranger par ordre alph. cf ligne ci-dessous
   cipheredArray.sort();
   ciphered = cipheredArray.toString();  // forme traitable de la string pour compter ses caractères
-  document.getElementById('resultP').innerHTML += "Analyse de <strong>" + ciphered.length + "</strong> lettres dans <strong>" + wordCount + "</strong> mots";
+  document.getElementById('resultP').innerHTML += "Analyse de <strong>" + cipheredArray.length + "</strong> lettres dans <strong>" + wordCount + "</strong> mots";
   var occurences = [];
   var occurencesPer = [];
   for (var counter = 0; counter < 26; counter++) { // compte les occurences
