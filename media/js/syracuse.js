@@ -44,3 +44,24 @@ function syracuseDecipher () {
   }
 
 }
+
+function factorize(n) {   // Méthode de Fermat cf http://www.bibmath.net/crypto/index.php?action=affiche&quoi=complements/factoentiers
+  var a = 0;
+  var b = 0;
+  var vrai = true;
+  alert(n);
+  console.log();
+  debugger;
+  while (vrai = true) {
+    a = Math.sqrt(n+b^2);
+    if (a%1 != 0) {
+      b++;
+    }
+    else {
+      vrai = false;
+    }
+  }
+  a = a+b;
+  b = a-b;
+  document.getElementById('result').innerHTML = n + " se factorise en " + a + "*" + b;
+}
