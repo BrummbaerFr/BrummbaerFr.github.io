@@ -38,7 +38,7 @@
 				<div class="systeme">
 					<h1>Analyse de la fréquence des lettres</h1>
           <textarea name="ciphered" id="ciphered" placeholder="Texte à analyser ..."></textarea><br/>
-          <button name="analyse" onclick="freqLettres()">Analyser</button><br/>
+          <button name="analyse" onclick="RemoveAccents(); freqLettres();">Analyser</button><br/>
 				</div>
 				<aside>
 					<p>
@@ -51,6 +51,7 @@
 						<th>Fréquence</th>
 					</tr>
 				</table>
+				<p id="resultP"></p>
 			</div>
 			<footer class="astablerow">
 				<nav class="footerNav">
