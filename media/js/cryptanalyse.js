@@ -1,4 +1,4 @@
-function RemoveAccents() {
+function removeAccents() {
   var str = document.getElementById('ciphered').value;
   var accents    = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
   var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
@@ -38,6 +38,14 @@ function freqLettres() {
     }
     // Affichage des résultats
     var table = document.getElementById('result');
+    var reset = document.getElementsByTagName('tr').length; // si le tableau possède plus d'une ligne (ancienne analyse), on le vide
+    if (reset > 1) {
+      for (counter = 1; counter < reset; counter++) {
+        table.deleteRow(-1);
+      }
+    }
+    // Si le tableau contient des données (ancienne analyse), on le vide
+    //if (table.length != 1)
     for (counter = 0; counter < 26; counter++) {
       var row = table.insertRow(-1);
       var column1 = row.insertCell(0);
