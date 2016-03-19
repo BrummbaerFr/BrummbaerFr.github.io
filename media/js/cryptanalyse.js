@@ -23,18 +23,7 @@ function freqLettres() {
   if (cipheredArray.length < 1) {
     alert("Vous n'avez rien entré !");
   }
-  else {  // l. 12 à  retire les accents
-	/*	var strAccentsOut = new Array();
-		var strAccentsLen = cipheredArray.length;
-		var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
-		var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
-		for (var y = 0; y < strAccentsLen; y++) {
-			if (accents.indexOf(strAccents[y]) != -1) {
-				strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);
-			} else
-				strAccentsOut[y] = strAccents[y];
-		}
-		strAccentsOut = strAccentsOut.join(''); */
+  else {
     ciphered = cipheredArray.toString();  // forme traitable de la string pour compter ses caractères
     document.getElementById('resultP').innerHTML += "Analyse de <strong>" + cipheredArray.length + "</strong> lettres dans <strong>" + wordCount + "</strong> mots.";
     var occurences = [];
