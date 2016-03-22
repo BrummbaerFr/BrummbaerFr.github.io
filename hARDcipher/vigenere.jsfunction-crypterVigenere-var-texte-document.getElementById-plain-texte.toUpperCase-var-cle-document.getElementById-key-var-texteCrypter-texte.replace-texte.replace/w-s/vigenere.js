@@ -1,13 +1,17 @@
 function crypterVigenere(){
-var texte = document.getElementById("plain");
-texte.toUpperCase();
-var cle = document.getElementById("key");
+var texte = document.getElementById("plain").value.toUpperCase();
+var cle = document.getElementById("key").value;
 var texteCrypter ="";
-texte.replace(" ","");
-texte.replace(/[^\w\s]/gi,"");
-for (i=1;i<texte.length;i++) {
-	number = (texte.charCodeAt(i)+cle.charCodeAt(i))%26+65;
-	texteCrypter+=fromCharCode(number);
+texte = texte.replace(" ","");
+texte = texte.replace(/[^\w\s]/gi,"");
+cle = cle.replace(" ","");
+cle = cle.replace(/[^\w\s]/gi,"");
+for (i=0;i<=(texte.length+1);i++) {
+	var number = ((texte.charCodeAt(i)+cle.charCodeAt(i%cle.length))%26)+65;
+	texteCrypter+= String.fromCharCode(number);
+	 console.log();
+   debugger;
 	}
-hash=texteCrypter
+document.getElementById("hash").innerHTML= texteCrypter;
 }
+
