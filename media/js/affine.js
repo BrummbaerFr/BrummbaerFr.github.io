@@ -21,3 +21,7 @@ function getAffineHash(){
 	}
 	document.getElementById("hash").innerHTML = hash;
 }
+
+function getPlainByAffine(){
+	
+}
