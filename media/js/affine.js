@@ -19,7 +19,7 @@ function getAffineHash(){
 			hash += " ";
 		}
 	}
-	document.getElementById("hash").innerHTML = hash;
+	document.getElementById("affine").innerHTML = hash;
 }
 
 function getPlainByAffine(){
