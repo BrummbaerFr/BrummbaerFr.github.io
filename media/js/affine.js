@@ -23,7 +23,7 @@ function getAffineHash(){
 }
 
 function getPlainByAffine(){
-	var affine = document.getElementById("hash").value.toLowerCase();
+	var affine = document.getElementById("affine").value.toLowerCase();
 	var fonction = document.getElementById("fonction").value.replace("+", "-").replace("-", "+");
 	var tableau = affine.split("");
 	var plain = "";
