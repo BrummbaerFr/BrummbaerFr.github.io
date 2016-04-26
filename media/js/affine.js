@@ -4,7 +4,7 @@ function getAffineHash(){
 	var fonction = document.getElementById("fonction").value;
 	var tableau = plain.split("");
 	var hash = "";
-	for (var i = 0; i <= tableau.length; i++) {
+	for (var i = 0; i < tableau.length; i++) {
 		if(tableau[i] != " "){
 			//Nous regardons a quel position est la lettre dans l'alphabet
 			var emplacement = alphabet.indexOf(tableau[i]) + 1;
@@ -19,15 +19,16 @@ function getAffineHash(){
 			hash += " ";
 		}
 	}
-	document.getElementById("affine").innerHTML = hash;
+	document.getElementById("affine").value = hash;
 }
 
 function getPlainByAffine(){
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	var affine = document.getElementById("affine").value.toLowerCase();
 	var fonction = document.getElementById("fonction").value.replace("+", "-").replace("-", "+");
 	var tableau = affine.split("");
 	var plain = "";
-	for (var i = 0; i <= tableau.length; i++) {
+	for (var i = 0; i < tableau.length; i++) {
 		if(tableau[i] != " "){
 			//Nous regardons a quel position est la lettre dans l'alphabet
 			var emplacement = alphabet.indexOf(tableau[i]) + 1;
@@ -42,5 +43,5 @@ function getPlainByAffine(){
 			plain += " ";
 		}
 	}
-	document.getElementById("plain").innerHTML = plain;
+	document.getElementById("plain").value = plain;
 }
