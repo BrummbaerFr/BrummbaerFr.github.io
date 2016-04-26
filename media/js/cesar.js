@@ -25,7 +25,7 @@ function getCesarHash(){
 	}
 	//On a notre HASH
 	//Set le Hash dans le Champ Hash
-	document.getElementById("hash").innerHTML = hash;
+	document.getElementById("hash").value = hash;
 }
 
 function getCesarPlain(){
@@ -74,7 +74,7 @@ function getCesarPlain(){
 	}
 	//On a notre list de TEXT celon le décalage
 	//Set le resultat dans le Champ plain
-	document.getElementById("plain").innerHTML = plain;
+	document.getElementById("plain").value = plain;
 }
 
 function hasKey(){
