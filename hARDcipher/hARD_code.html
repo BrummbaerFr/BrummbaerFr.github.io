@@ -15,12 +15,17 @@
 				<h1 class="nomLogo">hARD cipher</h1>
 				<nav class="headerNav">
 					<ul>
-					<li><a href="index.html">Accueil</a></li>
+					<li><a href="index.html" class="active">Accueil</a></li>
 					<li><a href="cesar.html">César</a></li>
 					<li><a href="vigenere.html">Vigenère</a></li>
-					<li><a href="hARD_code.html" class="active">le hARD code</a>
+					<li><a href="#">Cryptanalyse</a>
+						<ul class="niveau1">
+							<li><a href="freqlettres.html">Fréquence des lettres</a></li>
+						</ul>
 					</li>
-					<li><a href="aproposdenous.html">qui sommes nous ?</a></li>
+					<li><a href="hARD_code.html">le hARD code</a>
+					</li>
+					<li><a href="about.html">qui sommes nous ?</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -28,7 +33,7 @@
 				<div class="systeme">
 					<h1>Cryptage par Syracuse</h1>
           <textarea name="plain" id="plain" placeholder="Votre texte à crypter ..."></textarea><br/>
-          <button name="crypter" onclick="syracuseCipher()">Crypter</button><input name="decale" id="decale_crypter" type="number"> décalage<br/>
+          <button name="crypter" onclick="syracuseCipher()">Crypter</button>
           <textarea name="hash" id="hash" placeholder="Votre texte crypté ..."></textarea><br/>
           <textarea name="key" id="key" placeholder="Votre clé apparaîtra ici ..."></textarea>
 					<button name="decrypter" onclick="syracuseDecipher()">Décrypter</button><br/>
@@ -42,9 +47,9 @@
 			<footer class="astablerow">
 				<nav class="footerNav">
 					<ul>
-						<li>A propos de nous</li>
-						<li>Licence</li>
-						<li>Mentions légales</li>
+						<li><a href="about.html">A propos de nous</a></li>
+						<li><a href="license.html">Licence</a></li>
+						<li><a href="livredor.html">Livre d'or</a></li>
 					</ul>
 				</nav>
 			</footer>
