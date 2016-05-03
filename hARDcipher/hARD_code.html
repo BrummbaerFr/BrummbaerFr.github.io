@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic,greek' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>	<!-- Polices Google, Roboto et Montserrat, voir style.css -->
+		<link rel="icon" type="image/png" href="../media/img/favicon.ico">
+		<title>hARD cipher - César</title>
+    <script type="text/javascript" src="../media/js/syracuse.js"></script>
+	</head>
+	<body>
+		<div class="astable"> <!-- cf CSS pour commentaires -->
+			<header class="astablerow">
+				<h1 class="nomLogo">hARD cipher</h1>
+				<nav class="headerNav">
+					<ul>
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="cesar.html">César</a></li>
+					<li><a href="vigenere.html">Vigenère</a></li>
+					<li><a href="hARD_code.html" class="active">le hARD code</a>
+						<ul class="niveau1">
+							<li><a href="coder.html">coder</a></li>
+							<li><a href="decoder.html">décoder</a></li>
+						</ul>
+					</li>
+					<li><a href="aproposdenous.html">qui sommes nous ?</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="mainBox" class="astablerow">
+				<div class="systeme">
+					<h1>Cryptage par Syracuse</h1>
+          <textarea name="plain" id="plain" placeholder="Votre texte à crypter ..."></textarea><br/>
+          <button name="crypter" onclick="syracuseCipher()">Crypter</button><input name="decale" id="decale_crypter" type="number"> décalage<br/>
+          <textarea name="hash" id="hash" placeholder="Votre texte crypté ..."></textarea><br/>
+          <textarea name="key" id="key" placeholder="Votre clé apparaîtra ici ..."></textarea>
+					<button name="decrypter" onclick="syracuseDecipher()">Décrypter</button><br/>
+				</div>
+				<aside>
+					<p>
+						Description.
+					</p>
+				</aside>
+			</div>
+			<footer class="astablerow">
+				<nav class="footerNav">
+					<ul>
+						<li>A propos de nous</li>
+						<li>Licence</li>
+						<li>Mentions légales</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+	</body>
+</html>
