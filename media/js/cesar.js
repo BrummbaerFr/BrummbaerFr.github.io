@@ -4,6 +4,7 @@ function getCesarHash(){
 
 	//Get le Plain
 	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
+	plain = plain.replace(/[^a-zA-Z]+/, "");
 	var decale_crypter = document.getElementById("decale_crypter").value;			//2 vars différentes sinon quand l'utilisateur décrypte le JS peut prendre la valeur qui a servi au cryptage
 	//Mettre chaque lettre dans un tableau
 	var tableau = plain.split("");
