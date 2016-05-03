@@ -35,6 +35,7 @@ function getCesarPlain(){
 
 	//Get le hash
 	var hash = RemoveAccents(document.getElementById("hash").value.toUpperCase());
+	hash = hash.replace(/[^A-Z]+/, "");
 	//Mettre chaque lettre dans un tableau
 	var tableau = hash.split("");
 	var plain = "";
