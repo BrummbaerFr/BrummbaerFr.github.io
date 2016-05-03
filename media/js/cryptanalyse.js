@@ -14,6 +14,7 @@ function removeAccents() {
 }
 
 function freqLettres() {
+  document.getElementById('resultP').innerHTML = "";
   var ciphered = document.getElementById('ciphered').value.toUpperCase();
   var wordCount = ciphered.split(" ").length;
   ciphered = ciphered.replace(/\W+/g, '');
