@@ -2,7 +2,7 @@ function getAffineHash(){
 	document.getElementById("plain").style.textTransform = "uppercase";
 	
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
+	var plain = RemoveAccents(document.getElementById("plain").value.toLowerCase());
 	var fonction = document.getElementById("fonction").value;
 	var tableau = plain.split("");
 	var hash = "";
@@ -28,7 +28,7 @@ function getPlainByAffine(){
 	document.getElementById("affine").style.textTransform = "uppercase";
 	
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var affine = RemoveAccents(document.getElementById("affine").value.toUpperCase());
+	var affine = RemoveAccents(document.getElementById("affine").value.toLowerCase());
 	var fonction = document.getElementById("fonction").value.replace("+", "-").replace("-", "+");
 	var tableau = affine.split("");
 	var plain = "";
