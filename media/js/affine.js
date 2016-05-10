@@ -1,6 +1,6 @@
 function getAffineHash(){
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var plain = document.getElementById("plain").value.toLowerCase();
+	var plain = RemoveAccents(document.getElementById("plain").value.toLowerCase());
 	var fonction = document.getElementById("fonction").value;
 	var tableau = plain.split("");
 	var hash = "";
@@ -24,7 +24,7 @@ function getAffineHash(){
 
 function getPlainByAffine(){
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var affine = document.getElementById("affine").value.toLowerCase();
+	var affine = RemoveAccents(document.getElementById("affine").value.toLowerCase());
 	var fonction = document.getElementById("fonction").value.replace("+", "-").replace("-", "+");
 	var tableau = affine.split("");
 	var plain = "";
@@ -44,4 +44,19 @@ function getPlainByAffine(){
 		}
 	}
 	document.getElementById("plain").value = plain;
+}
+function RemoveAccents(strAccents) {
+		var strAccents = strAccents.split('');
+		var strAccentsOut = new Array();
+		var strAccentsLen = strAccents.length;
+		var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+		var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+		for (var y = 0; y < strAccentsLen; y++) {
+			if (accents.indexOf(strAccents[y]) != -1) {
+				strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);
+			} else
+				strAccentsOut[y] = strAccents[y];
+		}
+		strAccentsOut = strAccentsOut.join('');
+		return strAccentsOut;
 }
