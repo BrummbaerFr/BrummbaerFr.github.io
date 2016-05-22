@@ -84,6 +84,7 @@ function hasKey(){
 }
 
 function RemoveAccents(strAccents) {
+	//MERCI A alisterlf POUR AVOIR FAIT CE SCRIPT ENUMERANT TOUT LES CARACTERES AVEC ACCENTS
 	var strAccents = strAccents.split('');
 	var strAccentsOut = new Array();
 	var strAccentsLen = strAccents.length;
