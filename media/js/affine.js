@@ -1,8 +1,9 @@
 function getAffineHash(){
-	document.getElementById("plain").style.textTransform = "uppercase";
+	document.getElementById("plain").style.textTransform = "uppercase"; //Je transforme l'affichage du texte du champs en majuscule
 	
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
-	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
+	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase()); //On get la variable en la mettant en maj
+	plain = plain.replace(/[^A-Z ]+/g, ""); //On supprime tout ce qui ne fais pas partie de l'alphabet
 	var fonction = document.getElementById("fonction").value;
 	var tableau = plain.split("");
 	var hash = "";
@@ -29,6 +30,7 @@ function getPlainByAffine(){
 	
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	var affine = RemoveAccents(document.getElementById("affine").value.toUpperCase());
+	affine = affine.replace(/[^A-Z ]+/g, ""); //On supprime tout ce qui ne fais pas partie de l'alphabet
 	var fonction = document.getElementById("fonction").value.replace("+", "-").replace("-", "+");
 	var tableau = affine.split("");
 	var plain = "";
