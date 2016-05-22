@@ -18,9 +18,13 @@ function getAffineHash(){
 			//Nous remplaçons le x par l'emplacement
 			var fonction_temps = fonction.replace("x", emplacement);
 			//Nous faisons le cancul
-			var resultat = eval(fonction_temps) % 26;
+			var resultat = eval(fonction_temps);
+			alert(resultat);
+			if (Number(resultat) < 0) resultat = 26 - Math.abs(resultat)%26;
+			else resultat = resultat%26;
+			alert(resultat);
 			//Nous regardons a quel lettre correspond l'emplacement
-			if(resultat == 0)hash += "Z";
+			if(resultat == 0) hash += "Z";
 			else hash += alphabet.charAt(resultat - 1);
 		}
 		else{
