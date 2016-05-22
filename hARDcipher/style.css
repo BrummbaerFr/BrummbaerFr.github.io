@@ -147,7 +147,6 @@ div#mainBox {
 	margin: auto;
 	padding: 10px 40px 50px 40px;	/* décolle le texte des bords de la div */
 	overflow: auto;
-
 	background-color: white;
 	color: #212121;
 	box-shadow: 1px 1px 8px rgba(0,0,0,.32);
@@ -171,6 +170,31 @@ aside img {
 	float: left;
 	width: 55%;
 	height: 500px;
+}
+
+.quote {
+	display: block;
+	float: right;
+	width: 50%;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.quoteAuthor {
+	float: right;
+	display: block;
+	width: 50%;
+	margin-top: 10px;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 12px;
+}
+
+.face {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	border: solid 5px #D9CEB2;
 }
 
 /* FOOTER - PIED DE PAGE */
