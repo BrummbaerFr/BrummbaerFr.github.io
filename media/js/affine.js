@@ -20,7 +20,7 @@ function getAffineHash(){
 			//Nous faisons le cancul
 			var resultat = eval(fonction_temps) % 26;
 			//Nous regardons a quel lettre correspond l'emplacement
-			if(resultat == 0)hash += "A";
+			if(resultat == 0)hash += "Z";
 			else hash += alphabet.charAt(resultat - 1);
 		}
 		else{
