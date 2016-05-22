@@ -1,7 +1,9 @@
-function getCesarHash(){
-	//UPPERCASE l'input dans le Plain
+function load(){
 	document.getElementById("plain").style.textTransform = "uppercase";
+	document.getElementById("hash").style.textTransform = "uppercase";
+}
 
+function getCesarHash(){
 	//Get le Plain
 	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
 	plain = plain.replace(/[^A-Z ]+/g, "");
@@ -30,9 +32,6 @@ function getCesarHash(){
 }
 
 function getCesarPlain(){
-	//UPPERCASE l'input dans le hash
-	document.getElementById("hash").style.textTransform = "uppercase";
-
 	//Get le hash
 	var hash = RemoveAccents(document.getElementById("hash").value.toUpperCase());
 	hash = hash.replace(/[^A-Z ]+/g, "");
