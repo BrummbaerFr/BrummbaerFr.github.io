@@ -33,20 +33,20 @@ function crypterVigenere() {
 document.getElementById("hash").value= texteCrypter;
 }
 
-function RemoveAccents(strAccents) {
-	var strAccents = strAccents.split('');
-	var strAccentsOut = new Array();
+function RemoveAccents(strAccents) { //fonction qui permet d'enlever les accents
+	var strAccents = strAccents.split(''); // on coupe la chaine strAccents tout les caractère et on les mets dans un tableau
+	var strAccentsOut = new Array(); // on définit la variable comme un tableau
 	var strAccentsLen = strAccents.length;
 	var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
 	var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
 	for (var y = 0; y < strAccentsLen; y++) {
-		if (accents.indexOf(strAccents[y]) != -1) {
-			strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);
+		if (accents.indexOf(strAccents[y]) != -1) { //on cherche a savoir si la variable du tableau est une lettre avec un accent ce qui nous donneras -1 si telle est le cas
+			strAccentsOut[y] = accentsOut.substr(accents.indexOf(strAccents[y]), 1);//on remplace le lettre accentué par la même lettre sans accents qu'on ajoute dans la nouvelle variable
 		} else
 				strAccentsOut[y] = strAccents[y];
 	}
-	strAccentsOut = strAccentsOut.join('');
-	return strAccentsOut;
+	strAccentsOut = strAccentsOut.join('');  //on retransforme le tableau en chaine
+	return strAccentsOut;  // met fin à la fonction et ressort la variable strAccentsOut
 }
 
 function decrypterVigenere() { //les fonctions sont les mêmes que pour le cryptage globalement
