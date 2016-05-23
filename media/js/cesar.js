@@ -7,7 +7,7 @@ function load(){
 function getCesarHash(){
 	//On récupère le texte auquel on retire les accent à l'aide d'une fonction et que l'on met en majuscule
 	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
-	//Nous retirons tout les caractère qui ne font pas partie de l'alphabet
+	//Nous retirons tout les caractère qui ne font pas partie de l'alphabet grâce à du REGEX
 	plain = plain.replace(/[^A-Z ]+/g, "");
 	//Nous mettons a jour l'affichage du texte sans les caractères interdits
 	document.getElementById("plain").value = plain;
@@ -39,15 +39,21 @@ function getCesarHash(){
 }
 
 function getCesarPlain(){
-	//Get le hash
+	//Nous récupérons le texte codé auquel nous retirons les accents et le mettons en majuscule
 	var hash = RemoveAccents(document.getElementById("hash").value.toUpperCase());
+	//Nous retirons tout les caractère qui ne font pas partie de l'alphabet grâce à du REGEX
 	hash = hash.replace(/[^A-Z ]+/g, "");
 	//Mettre chaque lettre dans un tableau
 	var tableau = hash.split("");
+	//Nous initialisons la variable plain
 	var plain = "";
+	//Si l'utilisateur connais le décalage nous rentrons dans cette condition
 	if (document.getElementById("decale_decrypter") != null) {
+		//Nous récupérons la valeur de décalage
 		var decale_decrypter = document.getElementById("decale_decrypter").value;
+		//Nous rentrons dans letableau qui va traiter toute les lettres une par une
 		for (var i = 0; i < tableau.length; i++) {
+			//Nous récupérons le code ASCII du caractère traité
 			var charCode = tableau[i].charCodeAt(0);
 			//Si nous avons à faire à un espace nous ne le traitons pas
 			if (tableau[i] != ' '){
@@ -61,10 +67,14 @@ function getCesarPlain(){
 			plain += String.fromCharCode(charCode);
 		}
 	}
+	//Si l'utilisateur ne connais pas le décalage nous allons lui montrer chaque possibilité de texte
 	else{
+		//Nous allons afficher toute les combinaisons possible avec un décallage de 1 à 25
 		for (var decale_decrypter = 1; decale_decrypter < 26; decale_decrypter++) {
 		plain += 'Décalage de '+decale_decrypter+': ';
+		//Nous traitons chaque lettre du texte une par une
 		for (var i = 0; i < tableau.length; i++) {
+			//Nous récupérons l'ASCII de la lettre
 			var charCode = tableau[i].charCodeAt(0);
 			//Si nous avons à faire à un espace nous ne le traitons pas
 			if (tableau[i] != ' '){
@@ -77,11 +87,12 @@ function getCesarPlain(){
 			//Assemblement du tableau et Remplacement du charCode par la nouvelle lettre
 			plain += String.fromCharCode(charCode);
 		}
+		//Nous ajoutons un retour à la ligne
 		plain += "\n";
 	}
 	}
 	//On a notre list de TEXT celon le décalage
-	//Set le resultat dans le Champ plain
+	//On met le resultat dans le Champ plain
 	document.getElementById("plain").value = plain;
 }
 
