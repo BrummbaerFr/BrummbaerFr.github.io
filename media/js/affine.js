@@ -13,10 +13,15 @@ function getAffineHash(){
 	plain = plain.replace(/[^a-zA-Z ]+/g, "");
 	//J'update le champs du texte avec un texte propre sans les caractère non autorisés.
 	document.getElementById("plain").value = plain;
+	//Je récupère la fonction choisie par l'utilisateur
 	var fonction = document.getElementById("fonction").value;
+	//Je met chaque lettre dans un tableau
 	var tableau = plain.split("");
+	//J'initialise ma variable hash qui stockera la sortie
 	var hash = "";
+	//Cette boucle traite une par une les lettres du texte mise dans le tableau
 	for (var i = 0; i < tableau.length; i++) {
+		//Si ce n'est pas un espace on traitre
 		if(tableau[i] != " "){
 			//Nous regardons a quel position est la lettre dans l'alphabet
 			var emplacement = alphabet.indexOf(tableau[i]) + 1;
@@ -30,10 +35,12 @@ function getAffineHash(){
 			if(resultat == 0) hash += "Z";
 			else hash += alphabet.charAt(resultat - 1);
 		}
+		//Si c'est un espace on ne traite pas et on met un espace
 		else{
 			hash += " ";
 		}
 	}
+	//Nous affichons le texte codé
 	document.getElementById("affine").value = hash;
 }
 
