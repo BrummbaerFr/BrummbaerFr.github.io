@@ -1,9 +1,9 @@
 function crypterVigenere() {
 	var texte = RemoveAccents(document.getElementById("plain").value.toUpperCase());//utilise la fonction remove accent
-	var cle = RemoveAccents(document.getElementById("key").value.toUpperCase());//afin d'enlever les accents au lettre, de plus mets le texte en majuscule
+	var cle = RemoveAccents(document.getElementById("key").value.toUpperCase());//afin d'enlever les accents aux lettres, de plus met le texte en majuscule
 	var cle1 ="";
 	var texteCrypter =""; // crée une variable vide pour mettre notre texte crypté ensuite
-	for (i=0;i<=cle.length;i++) { //on enlève les caractère spéciaux/espaces de la clé
+	for (i=0;i<=cle.length;i++) { //on enlève les caractères spéciaux/espaces de la clé
 		if (cle.charCodeAt(i)>=32 && cle.charCodeAt(i)<=64 || cle.charCodeAt(i)>=91 && cle.charCodeAt(i)<=127 ) { // charcode(i) sert a voir le nombre ascii du caractère 
 			cle1 +="";                                                                                             //et ainsi savoir si son nombre correspond à une lettre ou non
 	   }	   // si ce n'est pas une lettre on ne rajoute rien dans la clé
@@ -11,7 +11,7 @@ function crypterVigenere() {
 				cle1 += String.fromCharCode(cle.charCodeAt(i)); //si c'est une lettre on l'ajoute dans une nouvelle variable vide
 			}
 	}
-	var cle2 =""; //cette voucle supprime des caractères invisible se trouvant à la fin présent dans la clé pour je ne sais quelle raison
+	var cle2 =""; //cette boucle supprime des caractères invisibles se trouvant à la fin, présent dans la clé pour je ne sais quelle raison
 	for (i=0;i<=cle1.length-2;i++) {
 		var number1 = cle1.charCodeAt(i);
 		cle2 += String.fromCharCode(number1);
@@ -21,7 +21,7 @@ function crypterVigenere() {
 	for (i=0;i<=texte.length;i++) { // c'est la boucle de cryptage véritable
 				var number = texte.charCodeAt(i)-65;   // on ramène la clé et le texte de la position i et z 
 				var cle3 = cle2.charCodeAt(z%cle2.length)-65;
-				if (number<0 || number>=26) {               //cela permet de savoir si le texte a le caractère à la position i est
+				if (number<0 || number>=26) {               //cela permet de savoir si le texte au caractère à la position i est
 					texteCrypter += String.fromCharCode(32); // une lettre ou un caractère spéciale
 				} 
 					else {
