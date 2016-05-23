@@ -1,12 +1,17 @@
 function load(){
-	document.getElementById("plain").style.textTransform = "uppercase"; //Je transforme l'affichage du texte du champs en majuscule
+	//Je transforme l'affichage du texte du champs en majuscule
+	document.getElementById("plain").style.textTransform = "uppercase";
 	document.getElementById("affine").style.textTransform = "uppercase";
 }
 
 function getAffineHash(){
+	//J'énumère l'alphabet pour pouvoir récupérer la position de chaque lettre
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	//Le récupère le texte en majuscule en le passant par la fonction RemoveAccents
 	var plain = RemoveAccents(document.getElementById("plain").value.toLowerCase());
+	//Je supprime tout les caractère ne faisant pas partie de l'alphabet à l'aide de REGEX
 	plain = plain.replace(/[^a-zA-Z ]+/g, "");
+	//J'update le champs du texte avec un texte propre sans les caractère non autorisés.
 	document.getElementById("plain").value = plain;
 	var fonction = document.getElementById("fonction").value;
 	var tableau = plain.split("");
