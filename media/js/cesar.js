@@ -1,23 +1,30 @@
 function load(){
+	//Je défini chaque champs en majuscule
 	document.getElementById("plain").style.textTransform = "uppercase";
 	document.getElementById("hash").style.textTransform = "uppercase";
 }
 
 function getCesarHash(){
-	//Get le Plain
+	//On récupère le texte auquel on retire les accent à l'aide d'une fonction et que l'on met en majuscule
 	var plain = RemoveAccents(document.getElementById("plain").value.toUpperCase());
+	//Nous retirons tout les caractère qui ne font pas partie de l'alphabet
 	plain = plain.replace(/[^A-Z ]+/g, "");
+	//Nous mettons a jour l'affichage du texte sans les caractères interdits
 	document.getElementById("plain").value = plain;
-	var decale_crypter = document.getElementById("decale_crypter").value;			//2 vars différentes sinon quand l'utilisateur décrypte le JS peut prendre la valeur qui a servi au cryptage
+	//Nous récupérons la valeur du décallage choisie par l'utilisateur
+	var decale_crypter = document.getElementById("decale_crypter").value;
 	//Mettre chaque lettre dans un tableau
 	var tableau = plain.split("");
+	//Nous initialisons la variable hash
 	var hash = "";
+	//Ce tableau va traiter chaque lettre du texte
 	for (var i = 0; i < tableau.length; i++) {
 		//Si nous avons affaire à un espace nous ne le traitons pas
 		if (tableau[i] != ' '){
 			//Parcourir le tableau en convertissant chaque lettre en ASCII et y ajouter le décalage
 			var charCode = tableau[i].charCodeAt(0);
 			for (var ii = 0; ii < Number(decale_crypter); ii++) {
+				//Dès que l'on arrive a 90 ( fin de l'alphabet ), nous revenons à 65
 				if(charCode == 90)charCode = 65;
 				else charCode = Number(charCode) + 1;
 			}
@@ -27,8 +34,7 @@ function getCesarHash(){
 		//Assemblement du tableau
 		hash += tableau[i];
 	}
-	//On a notre HASH
-	//Set le Hash dans le Champ Hash
+	//On affiche le texte codé dans le champs hash
 	document.getElementById("hash").value = hash;
 }
 
@@ -80,7 +86,8 @@ function getCesarPlain(){
 }
 
 function hasKey(){
-	document.getElementById("choix").innerHTML = '<input name="decale" id="decale_decrypter" type="number"> décalage';
+	//Cette fonction affiche un champs pour rentrer un décallage si nous le connaissons.
+	document.getElementById("choix").innerHTML = 'décalage:<input name="decale" id="decale_decrypter" type="number">';
 }
 
 function RemoveAccents(strAccents) {
